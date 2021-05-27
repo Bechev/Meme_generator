@@ -1,0 +1,36 @@
+from PIL import Image, ImageDraw, ImageFont
+import os
+
+class MemeEngine():
+    def __init__(self, output_dir):
+        self.output_dir = output_dir
+
+    def make_meme(self, img_path, text, author, width=500) -> str:
+        img = Image.open(img_path)
+        img_name = img_path.split('/')[-1]
+        font = ImageFont.truetype('./_data/Font/LilitaOne-Regular.ttf', 36)
+        if width is not None:
+            ratio = width/float(img.size[0])
+            height = int(ratio*float(img.size[1]))
+            img = img.resize((width, height), Image.NEAREST)
+        
+        if text is not None:
+            draw = ImageDraw.Draw(img)
+            draw.text((10, img.height - 100), text, fill='white', font=font)
+
+        if author is not None:
+            draw = ImageDraw.Draw(img)
+            draw.text((10, img.height - 50), author, fill='white', font=font)
+       
+        output_path = self.create_output_path(img_name)
+        img.save(output_path)
+        return output_path
+
+    def create_output_path(self, img_name):
+        try:
+            os.mkdir(self.output_dir)
+        except Exception as e:
+            print(e)
+            pass
+            
+        return self.output_dir + '/meme_' + img_name
