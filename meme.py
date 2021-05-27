@@ -1,8 +1,9 @@
 import os
 import random
-# @TODO Import your Ingestor and MemeEngine classes
+
 from Ingestors import Ingestor
 from Ingestors import QuoteModel
+
 
 def generate_meme(path=None, body=None, author=None):
     """ Generate a meme given an path and a quote """
@@ -13,8 +14,8 @@ def generate_meme(path=None, body=None, author=None):
         images = "./_data/photos/dog/"
         imgs = []
         for root, dirs, files in os.walk(images):
+            print(root)
             imgs = [os.path.join(root, name) for name in files]
-
         img = random.choice(imgs)
     else:
         img = path[0]
