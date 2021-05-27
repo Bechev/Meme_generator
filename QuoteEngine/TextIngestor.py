@@ -46,5 +46,6 @@ class TextIngestor(IngestorInterface):
                 except Exception:
                     pass
         for quote in quote_list:
-            print(f'''this is my TXT quote: {quote.body} - {quote.author}, it comes form: {path}''')
+            print(f'''this is my TXT quote: {quote.body} - {quote.author}
+, it comes form: {path}''')
         return quote_list
