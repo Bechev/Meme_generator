@@ -16,13 +16,13 @@ def generate_meme(path=None, body=None, author=None):
         imgs = []
         for root, dirs, files in os.walk(images):
             print(root)
-            imgs = [os.path.join(root, name) for name in files]
+            imgs = [os.path.join(root, name) for name in files if name != '.DS_Store'] 
         img = random.choice(imgs)
     else:
         img = path[0]
 
     if body is None:
-        # quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt']
+        # quote_files = ['./_data/DogQuotes/DogQuotesDOCX.docx']
         quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
                        './_data/DogQuotes/DogQuotesDOCX.docx',
                        './_data/DogQuotes/DogQuotesPDF.pdf',
