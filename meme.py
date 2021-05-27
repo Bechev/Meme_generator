@@ -1,8 +1,8 @@
 import os
 import random
 
-from Ingestors import Ingestor
-from Ingestors import QuoteModel
+from QuoteEngine import Ingestor
+from QuoteEngine import QuoteModel
 
 
 def generate_meme(path=None, body=None, author=None):
