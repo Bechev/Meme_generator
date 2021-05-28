@@ -1,3 +1,12 @@
+"""
+CLI portion of the meme generator.
+
+Handles CLI requests for the meme generator with 3 arguments
+path to image
+quote
+author
+"""
+
 import os
 import random
 import argparse
@@ -8,8 +17,7 @@ from MemeGenerator import MemeEngine
 
 
 def generate_meme(path=None, body=None, author=None):
-    print(f' those are my args: {path}, {body}, {author}')
-    """ Generate a meme given an path and a quote """
+    """Generate a meme given an path and a quote."""
     img = None
     quote = None
 
@@ -44,7 +52,7 @@ def generate_meme(path=None, body=None, author=None):
 
 
 if __name__ == "__main__":
-   
+
     # @TODO Use ArgumentParser to parse the following CLI arguments
     # path - path to an image file
     # body - quote body to add to the image

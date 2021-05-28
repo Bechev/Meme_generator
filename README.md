@@ -12,6 +12,11 @@ The program can be used as a CLI tool or through a FLASK server
 
 Instructions:
     CLI:
+        1) clone the repository: git clone https://github.com/Bechev/Meme_generator
+        2) create a virtual environement (as wanted): python3 -m venv .
+        3) activate the venv: source ./bin/activate
+        4) install the dependencies: pip install -r requirements.txt
+        5) run the meme.py scrip with the arguments wanted: python3 meme.py --path --body --author
 
     FLASK server:
 

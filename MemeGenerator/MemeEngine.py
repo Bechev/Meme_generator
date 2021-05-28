@@ -20,7 +20,7 @@ class MemeEngine():
     def __init__(self, output_dir):
         """
         Initiate an instance of the class.
-        
+
         Arg: output_dir: folder where created meme will be dropped
         """
         self.output_dir = output_dir
@@ -40,7 +40,7 @@ class MemeEngine():
         print(f'//////// my image: {img_path}////////////')
         img = Image.open(img_path)
         img_name = img_path.split('/')[-1]
-        font = ImageFont.truetype('./_data/Font/LilitaOne-Regular.ttf', 36)
+        font = ImageFont.truetype('./_data/Font/LilitaOne-Regular.ttf', 20)
         if width is not None:
             ratio = width/float(img.size[0])
             height = int(ratio*float(img.size[1]))
