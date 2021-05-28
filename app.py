@@ -42,7 +42,6 @@ def setup():
     imgs = None
     imgs = []
     for root, dirs, files in os.walk(images_path):
-        print(root)
         imgs = [os.path.join(root, name)
                 for name in files if name != '.DS_Store']
 

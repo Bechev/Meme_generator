@@ -45,7 +45,4 @@ class TextIngestor(IngestorInterface):
                     quote_list.append(QuoteModel(quote_text, quote_author))
                 except Exception:
                     pass
-        for quote in quote_list:
-            print(f'''this is my TXT quote: {quote.body} - {quote.author}
-, it comes form: {path}''')
         return quote_list

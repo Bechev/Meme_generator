@@ -37,7 +37,6 @@ class MemeEngine():
         author: author of the quote
         width: max width the output image (meme) will have
         """
-        print(f'//////// my image: {img_path}////////////')
         img = Image.open(img_path)
         img_name = img_path.split('/')[-1]
         font = ImageFont.truetype('./_data/Font/LilitaOne-Regular.ttf', 20)
@@ -68,7 +67,6 @@ class MemeEngine():
         try:
             os.mkdir(self.output_dir)
         except Exception as e:
-            print(e)
             pass
 
         return self.output_dir + '/meme_' + img_name

@@ -44,6 +44,4 @@ class CSVIngestor(IngestorInterface):
             new_cat = QuoteModel(row['body'], row['author'])
             quote_list.append(new_cat)
 
-        for quote in quote_list:
-            print(f'this is my CSV quote: {quote.body} - {quote.author}')
         return quote_list
