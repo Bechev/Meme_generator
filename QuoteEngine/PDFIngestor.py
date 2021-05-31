@@ -53,7 +53,7 @@ class PDFIngestor(IngestorInterface):
             pass
 
         shutil.copyfile(path, file_temp_path)
-        subprocess.run(['pdftotext', '-simple', file_temp_path])
+        subprocess.run(['pdftotext', file_temp_path])
         txt_file_path = temp_path + '/' + file_name.split('.')[0] + '.txt'
         quote_list = TextIngestor.parse(txt_file_path)
         shutil.rmtree(temp_path)
