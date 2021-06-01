@@ -7,6 +7,7 @@ quote provided by the QuoteEngine
 
 from PIL import Image, ImageDraw, ImageFont
 import os
+from pathlib import Path
 
 
 class MemeEngine():
@@ -38,7 +39,7 @@ class MemeEngine():
         width: max width the output image (meme) will have
         """
         img = Image.open(img_path)
-        img_name = img_path.split('/')[-1]
+        img_name = Path(img_path).name
         font = ImageFont.truetype('./_data/Font/LilitaOne-Regular.ttf', 20)
         if width is not None:
             ratio = width/float(img.size[0])
